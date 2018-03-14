@@ -217,7 +217,7 @@ For now you must still rely on webpack.config.js. Let’s take a look…
 
 Give webpack a configuration file for using babel-loader in the most classical way.
 
-Create a new file named webpack.config.jsand configure the loader:
+Create a new file named webpack.config.js and configure the loader:
 
 ```
 module.exports = {
