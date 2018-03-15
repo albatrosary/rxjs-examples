@@ -1,12 +1,18 @@
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/fromEvent';
-import 'rxjs/add/operator/scan';
-import 'rxjs/add/operator/map';
+// import 'rxjs/add/observable/interval';
+import 'rxjs/add/operator/sampleTime';
 
 const button = document.querySelectorAll('button');
 
-let i=0;
+// let clicks = Observable.fromEvent(button[1], 'click');
+
+// Observable
+//   .interval(2000)
+//   .sample(clicks)
+//   .subscribe(x => console.log(x));
+
+
 Observable.fromEvent(button[1], 'click')
-  .map(x => (i++)*2)
-  .scan((acc, one) => acc + one, 1)
-  .subscribe(count => console.log(`Clicked ${count} times`));
+  .sampleTime(2000)
+  .subscribe(x => console.log(x));
