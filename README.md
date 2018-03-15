@@ -82,7 +82,7 @@ It will look in ./src/index.js as the default entry point. Moreover, it will spi
 In the next section we’ll see another nice feature of webpack 4: production and development mode.
 
 
-##webpack 4: production and development mode
+## webpack 4: production and development mode
 Having 2 configuration files is a common pattern in webpack.
 
 A tipical project may have:
@@ -217,7 +217,7 @@ For now you must still rely on webpack.config.js. Let’s take a look…
 
 Give webpack a configuration file for using babel-loader in the most classical way.
 
-Create a new file named webpack.config.jsand configure the loader:
+Create a new file named webpack.config.js and configure the loader:
 
 ```
 module.exports = {
