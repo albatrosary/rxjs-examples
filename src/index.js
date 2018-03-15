@@ -1,5 +1,12 @@
-const arr = [1, 2, 3];
-const iAmJavascriptES6 = () => console.log(...arr);
-window.iAmJavascriptES6 = iAmJavascriptES6;
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/fromEvent';
+import 'rxjs/add/operator/scan';
+import 'rxjs/add/operator/map';
 
-console.log('Hello World!');
+const button = document.querySelectorAll('button');
+
+let i=0;
+Observable.fromEvent(button[1], 'click')
+  .map(x => (i++)*2)
+  .scan((acc, one) => acc + one, 1)
+  .subscribe(count => console.log(`Clicked ${count} times`));
