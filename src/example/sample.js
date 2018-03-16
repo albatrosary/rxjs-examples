@@ -15,24 +15,24 @@ export function exec() {
   d3Sample.sample1();
 
   /** use export api */
-  let clickStream = Rx.Observable.fromEvent(document, 'mouseup');
-  let subscribe = Rx.Subscriber.create(function(n) { console.log(n + "click"); })
+  const clickStream = Rx.Observable.fromEvent(document, 'mouseup');
+  const subscribe = Rx.Subscriber.create((n) => console.log(n + "click"))
   rxSample.checkDoubleClick(clickStream, subscribe);
 
   /** drag and drop */
   (() => {
     /** get d3 object */
-    var circle = d3.select('.fr__sample-circle');
+    const circle = d3.select('.fr__sample-circle');
 
     /** make observer */
-    var dragMU = Rx.Observable.fromEvent(circle.node(), 'mouseup');
-    var dragMM = Rx.Observable.fromEvent(document, 'mousemove');
-    var dragMD = Rx.Observable.fromEvent(circle.node(), 'mousedown');
+    const dragMU = Rx.Observable.fromEvent(circle.node(), 'mouseup');
+    const dragMM = Rx.Observable.fromEvent(document, 'mousemove');
+    const dragMD = Rx.Observable.fromEvent(circle.node(), 'mousedown');
 
     /** event setting */
-    var mouseDown = () => d3Sample.changeCircleColor('blue');
-    var subscribeMouseDown = Rx.Subscriber.create(() => d3Sample.changeCircleColor('purple'));
-    var subscribe = Rx.Subscriber.create((pos) => d3Sample.reWriteCircle(pos.clientX, pos.clientY));
+    const mouseDown = () => d3Sample.changeCircleColor('blue');
+    const subscribeMouseDown = Rx.Subscriber.create(() => d3Sample.changeCircleColor('purple'));
+    const subscribe = Rx.Subscriber.create((pos) => d3Sample.reWriteCircle(pos.clientX, pos.clientY));
 
     // create RxJS
     rxSample.dragAndDropObserve(dragMU, dragMD, dragMM, mouseDown, subscribeMouseDown, subscribe)

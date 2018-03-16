@@ -4,8 +4,8 @@ import * as Rx from 'rxjs';
 /* istanbul ignore next */
 export function sample1() {
 
-  var g = d3.selectAll('.sample1');
-  let svg = g.append("svg")
+  const g = d3.selectAll('.sample1');
+  const svg = g.append("svg")
     .attr("width", 500)
     .attr("height", 500)
     .attr('class', 'fr__sample__svg');
@@ -31,8 +31,8 @@ export function sample1() {
 
 export function reWriteCircle(x, y) {
   /** get d3 object */
-  var circle = d3.select('.fr__sample-circle');
-  var test = d3.select('.fr__sample-text');
+  const circle = d3.select('.fr__sample-circle');
+  const test = d3.select('.fr__sample-text');
 
   circle
     .attr("cx", x)
@@ -44,7 +44,7 @@ export function reWriteCircle(x, y) {
 }
 
 export function changeCircleColor(color) {
-  var circle = d3.select('.fr__sample-circle');
+  const circle = d3.select('.fr__sample-circle');
   circle.style('fill', color);
 }
 

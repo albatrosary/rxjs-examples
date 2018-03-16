@@ -28,7 +28,7 @@ export function dragAndDropObserve(
   scheduler
 ) {
 
-  var source = mouseDownObserve
+  const source = mouseDownObserve
     .do(() => beforeMouseDown())
     .flatMap((mdEvent) =>
       mouseMoveObserve
